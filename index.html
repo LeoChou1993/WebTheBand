@@ -204,6 +204,7 @@
 
     <script>
         const modal = document.querySelector('.js-modal')
+        const modalContainer = document.querySelector('.js-modal-container')
         const buyBtns = document.querySelectorAll('.js-buy-ticket')
         const closeTicket = document.querySelector('.js-modal-close')
 
@@ -215,6 +216,9 @@
         }
         closeTicket.addEventListener('click', HideBuyTicket)
         modal.addEventListener('click', HideBuyTicket)
+        modalContainer.addEventListener('click', function(event){
+            event.stopPropagation()
+        })
         var header = document.getElementById('header');
         var mobileMenu = document.getElementById('js-mobile-menu');
         var headerHeight = header.clientHeight;
